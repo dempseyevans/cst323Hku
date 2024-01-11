@@ -1,1 +1,38 @@
+## SoulJournal
 
+#### Dempsey Evans
+#### Grand Canyon University
+#### CST-391
+#### Professor Estey
+#### January 14th, 2024
+***
+
+***
+##### The following was the feedback from my first submission:
+"Dempsey, what would be great is if you wrote this up as MARKDOWN and add to your docs directory."
+
+I addressed this feedback by creating a markdown for my design report rather than continuing with the microsoft word document.
+
+***
+
+
+##### Introduction:
+###### SoulJournal is an application that tracks a user’s response to prompts. These prompts can be generated or created by the user. These prompts are meant to guide the user through faith-based journaling. Prompts will cover topics such as what they are currently thankful for, prayers, and how they will worship God through their actions.
+
+#### Functionality:
+###### This application will allow the user to be able to choose or create a prompt and type a response to the prompt. The user will be able to add and delete entries as well as review and edit previous entries.
+
+#### Database Design:
+![ER Design](ER.jpg 'ER Design')
+
+#### Initial UI Sitemap:
+![UI Sitemap](Sitemap.jpg 'Sitemap')
+
+#### UI Wireframe:
+![UI Wireframe](WireFrame.jpg 'UI WireFrame')
+
+#### Initial UML Classes
+![UML Classes](UML.jpg 'UML Classes')
+
+#### Risks:
+###### One risk of this application is data security such as that through unauthorized access to a user’s account. The user may potentially put sensitive information in their entries so the security of the data must be strong. Like all applications there is also a risk of bugs that make the application unusable or hurts the user experience. This includes improper communication between the application and the database.
