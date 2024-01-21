@@ -1,9 +1,9 @@
 ## Activity 3
 ##### Part 1
 ***
-![BootStrap grid in code](bootstrapGrid.jpg, 'Boostrap grid in code')
-![Responsive view](pageResponsiveView.jpg, 'Example 1 of responsive view'),
-![Responsive view 2](pageResponsiveView.jpg, 'Example 2 of responsive view')
+![BootStrap grid in code](bootstrapGrid.jpg 'Boostrap grid in code')
+![Responsive view](pageResponsiveView.jpg 'Example 1 of responsive view'),
+![Responsive view 2](pageResponsiveView.jpg 'Example 2 of responsive view')
 
 ##### Research Questions:
 ###### The @Input decorator in info.component.ts allows a property to have it's value set by the parent controller.
