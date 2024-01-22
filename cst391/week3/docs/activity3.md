@@ -51,7 +51,7 @@ export class MusicServiceService {
 		this.createAlbums();
 	}
 
-  //Methods to create, get, update, and delete data (artists and albums)
+  //Methods to create, get, update, and delete data
 	private createArtists(): void {
 		this.artists.push(new Artist(0, 'The Beatles'));
 	}
