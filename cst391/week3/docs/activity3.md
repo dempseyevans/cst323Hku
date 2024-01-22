@@ -14,5 +14,12 @@
 ***
 ##### Part 2
 ***
+![Initial Page](welcome.jpg 'Initial application page')
+![GCU Home](gcuhome.jpg 'GCU Homepage')
+![Create Album](createalbum.jpg 'Create Album page')
+![Add Album](albumadd.jpg 'Add Album page')
+![Artists List](artistlist.jpg 'Artists List page')
+![About Box](aboutbox.jpg 'About Box')
+***
 ##### References
 ###### Angular (n.d.) NgModel. https://angular.io/api/forms/NgModel#description
