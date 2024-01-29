@@ -18,6 +18,10 @@ I addressed this feedback by creating a markdown for my design report rather tha
 ##### Design Updates:
 ###### The REST API's in the design report have been updated to match changes made to the API's when creating the application.
 ***
+***
+##### Design Updates (1/29/24):
+###### The second part of the application was created. The routes are still being created. Errors are being resolved regarding the files to list the entries and prompts. Some errors in the API portion were fixed as well.
+***
 
 
 ##### Introduction:
