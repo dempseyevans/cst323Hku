@@ -1,0 +1,13 @@
+<div class="list-group" *ngIf="selectedPrompt == null">
+  <button class="list-group-item" active
+    *ngFor="let prompt of prompt"
+    (click)="onSelectPrompt(prompt)">
+    <table align="center" width="500px">
+      <tr>
+        
+       </tr>
+    </table>
+  </button>
+</div>
+
+<app-display-prompt *ngIf="selectedAlbum" [album]="selectedAlbum"></app-display-prompt>

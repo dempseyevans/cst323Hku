@@ -18,4 +18,10 @@ export class ShopComponent {
     answer: new FormControl(''),
 
     });
+
+  onSubmit(data: Partial<{answer: string | null}>)
+  {
+    this.answer = data.answer!;
+    console.log("Your name is " + this.answer);
+  }
 }
