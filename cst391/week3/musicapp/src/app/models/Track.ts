@@ -5,7 +5,7 @@ export class Track
     private title: string = "";
     private lyrics: string = "";
     private video: string = "";
- 
+
     constructor(id:number, number:number, title:string, lyrics:string, video:string)
     {
         this.id = id;
@@ -51,12 +51,12 @@ export class Track
         this.lyrics = lyrics;
     }
 
-    public get Video(): string 
+    public get Video(): string
     {
         return this.video;
     }
 
-    public set Video(value: string) 
+    public set Video(value: string)
     {
         this.video = value;
     }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Card";
-import "./app.css";
+import "./App.css";
 // import albums from './albums.json';
 import SearchForm from "./SearchForm";
 import dataSource from "./dataSource";

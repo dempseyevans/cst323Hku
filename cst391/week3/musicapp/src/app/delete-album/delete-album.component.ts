@@ -14,10 +14,10 @@ export class DeleteAlbumComponent implements OnInit {
   ngOnInit()
   {
     let artist = this.route.snapshot.paramMap.get('artist');
-    let id = this.route.snapshot.paramMap.get('id');
-    this.service.deleteAlbum(Number.parseInt(id), artist, (status:any) =>
-    {
-      console.log("The return from deleteAblum() was " + status);
-    });
+    let id = Number.parseInt(this.route.snapshot.paramMap.get('id')!);
+    this.service.deleteAlbum(id, () => {
+            console.log("The return from deleteAlbum() was " + status);
+        });
   }
 }
+

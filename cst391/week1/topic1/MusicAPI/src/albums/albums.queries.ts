@@ -1,39 +1,22 @@
 export const albumQueries = {
 	readAlbums:
-		`SELECT
-         id as albumId, title AS title, artist AS artist, 
-        description AS description, year AS year, image AS image 
-        from music.albums`,
+		`select id as albumId, title as title, artist as artist, description as description, year as year, image as image from music.albums`,
 	readAlbumsByArtist:
-		`SELECT 
-        id as albumId, title AS title, artist AS artist,
-         description AS description, year AS year, image AS image
-         FROM music.albums
-	     WHERE music.albums.artist = ?`,
+		`select id as albumId, title as title, artist as artist, description as description, year as year, image as image from music.albums
+	   where music.albums.artist = ?`,
 	readAlbumsByArtistSearch:
-		`SELECT 
-        id as albumId, title AS title, artist AS artist,
-         description AS description, year AS year, image AS image 
-         FROM music.albums
-	   WHERE music.albums.artist LIKE ?`,
+		`select id as albumId, title as title, artist as artist, description as description, year as year, image as image from music.albums
+	   where music.albums.artist like ?`,
 	readAlbumsByDescriptionSearch:
-		`SELECT 
-        id as albumId, title AS title, artist AS artist,
-         description AS description, year AS year, image AS image
-         FROM music.albums
-	   WHERE music.albums.description LIKE ?`,
+		`select id as albumId, title as title, artist as artist, description as description, year as year, image as image from music.albums
+	   where music.albums.description like ?`,
 	readAlbumsByAlbumId:
-		`SELECT
-         id as albumId, title AS title, artist AS artist,
-         description AS description, year AS year, image as image 
-         FROM music.albums
-	   WHERE music.albums.id = ?`,
+		`select id as albumId, title as title, artist as artist, description as description, year as year, image as image from music.albums
+	   where music.albums.id = ?`,
 	createAlbum:
-		`INSERT INTO ALBUMS(title, artist, description, year, image) VALUES(?,?,?,?,?)`,
+		`insert into albums(title, artist, description, year, image) values(?,?,?,?,?)`,
 	updateAlbum:
-		`UPDATE music.albums SET title=?, artist=?, year=?, image=?, description=? WHERE id = ?`,
+		`update music.albums set title=?, artist=?, year=?, image=?, description=? where id = ?`,
 	deleteAlbum:
-		`DELETE FROM music.albums 
-         WHERE id = ?`,
+		`delete from music.albums where id = ?`,
 }
-

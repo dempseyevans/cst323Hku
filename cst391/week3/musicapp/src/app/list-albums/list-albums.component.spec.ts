@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListAlbumsComponent } from './list-albums.component';
 
@@ -6,14 +6,12 @@ describe('ListAlbumsComponent', () => {
   let component: ListAlbumsComponent;
   let fixture: ComponentFixture<ListAlbumsComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ListAlbumsComponent ]
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ListAlbumsComponent]
     })
     .compileComponents();
-  }));
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(ListAlbumsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -23,3 +21,5 @@ describe('ListAlbumsComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+

@@ -2,17 +2,17 @@ import { Track } from "./Track";
 
 export class Album
 {
-    private id: number = -1;
+    private albumId: number = -1;
     private title: string = "";
     private artist: string = "";
     private description: string = "";
     private year: number = 1900;
     private image: string = "";
     private tracks: Track[] = [];
-    
+
     constructor(id:number, title:string, artist:string, description:string, year:number, image: string, tracks:Track[])
     {
-        this.id = id;
+        this.albumId = id;
         this.title = title;
         this.artist = artist;
         this.description = description;
@@ -23,11 +23,11 @@ export class Album
 
     get Id():number
     {
-        return this.id;
+        return this.albumId;
     }
     set Id(id:number)
     {
-        this.id = id;
+        this.albumId = id;
     }
 
     get Title():string
@@ -56,7 +56,7 @@ export class Album
     {
         this.description = description;
     }
-    
+
     get Year():number
     {
         return this.year;
@@ -66,11 +66,11 @@ export class Album
         this.year = year;
     }
 
-    public get Image(): string 
+    public get Image(): string
     {
         return this.image;
     }
-    public set Image(value: string) 
+    public set Image(value: string)
     {
         this.image = value;
     }

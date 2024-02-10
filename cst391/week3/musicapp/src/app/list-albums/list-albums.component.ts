@@ -1,33 +1,31 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { MusicServiceService} from '../service/music-service.service';
-import { Artist } from '../models/Artist';
-import { Album } from '../models/Album';
+import { Component, Input, OnInit } from '@angular/core';
+import { MusicServiceService } from '../service/music-service.service';
+import { Album } from '../models/albums.model';
+import { Artist } from '../models/artists.model';
 
 @Component({
   selector: 'app-list-albums',
   templateUrl: './list-albums.component.html',
-  styleUrls: ['./list-albums.component.css']
+  styleUrl: './list-albums.component.css'
 })
-export class ListAlbumsComponent implements OnInit
-{
-  @Input() artist: Artist;
-  albums:Album[] = [];
-  selectedAlbum: Album = null;
+export class ListAlbumsComponent implements OnInit{
 
-  constructor(private service: MusicServiceService) { }
+  @Input() artist?:Artist;
+  albums!:Album[];
+  selectedAlbum:Album | null = null;
 
-  ngOnInit()
-  {
-    this.service.getAlbums( this.artist.Name, (albums:Album[]) =>
-    {
-        this.albums = albums;
-    });
+  constructor(private service: MusicServiceService) {}
 
+  ngOnInit(){
+    // this.service.getAlbumsOfArtist(this.artist!.artist);
+
+    this.service.getAlbumsOfArtist((albums: Album[])=>{
+      this.albums = albums;
+    }, this.artist!.artist);
   }
 
-  public onSelectAlbum(album: Album)
-  {
-    console.log("Selected Album of " + album.Title);
+  public onSelectAlbum(album:Album){
     this.selectedAlbum = album;
   }
+
 }

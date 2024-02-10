@@ -1,90 +1,71 @@
 import { Injectable } from '@angular/core';
+import exampledata from '../../data/sample-music-data.json';
+import { Artist } from './../models/artists.model';
+import { Album } from '../models/albums.model';
 import { HttpClient } from '@angular/common/http';
-import { Artist } from '../models/Artist';
-import { Album } from '../models/Album';
-import { Track } from '../models/Track';
 
-@Injectable({providedIn: 'root'})
-export class MusicServiceService
-{
-  hostname:string = "http://localhost:3000";
+/**
+ * The below class is used to send data correctly to the angular application's webpage to display.
+ * this is where we would normally hook up API calls to retrieve data from a real database.
+ */
+@Injectable({ providedIn: 'root' }) //  inject at the root level of the Angular application
+export class MusicServiceService {
 
-  constructor(private http: HttpClient) { }
+  albums: Album[] = exampledata;
 
-  public getArtists(callback:any)
-  {
-    // Call the Get Artists API using a HTTP GET
-    this.http.get<Artist[]>(this.hostname + "/artists")
-      .subscribe((data) =>
-      {
-        let artists:Artist[] = [];
-        for(let x=0;x < data.length;++x)
-        {
-          artists.push(new Artist(data[x]['id'], data[x]['name']));
-        }
+  private host = "http://localhost:5000";
+
+  constructor(private http: HttpClient) {}
+
+  // Retrieves All Artist data from REST API
+  public getArtists(callback: (artists: Artist[])=> void): void {
+    this.http.get<Artist[]>(this.host + "/artists").
+      subscribe((artists: Artist[]) =>{
         callback(artists);
-       });
+      });
   }
 
-  public getAlbums(artist:string, callback:any)
-  {
-    // Call the Get Albums API using a HTTP GET
-    this.http.get<Album[]>(this.hostname + "/albums/" + artist)
-      .subscribe((data) =>
-      {
-        let albums:Album[] = [];
-        for(let x =0;x < data.length;++x)
-        {
-            let tracks: Track[] = [];
-            for(let y =0;y < data[x]['tracks'].length;++y)
-              tracks.push(new Track(data[x]['tracks'][y]['id'], data[x]['tracks'][y]['number'], data[x]['tracks'][y]['title'], data[x]['tracks'][y]['lyrics'], data[x]['tracks'][y]['video']));
-            albums.push(new Album(data[x]['id'], data[x]['title'], data[x]['artist'], data[x]['description'], data[x]['year'], data[x]['image'], tracks));
-        }
+  public getAlbums(callback: (alums: Album[])=> void): void  {
+    this.http.get<Album[]>(this.host + "/albums").
+      subscribe((albums: Album[]) =>{
         callback(albums);
-       });
+      });
   }
 
-  public getAlbum(artist:string, id:number, callback:any)
-  {
-    // Call the Get Album API using a HTTP GET
-    this.http.get<Album>(this.hostname + "/albums/" + artist + "/" + id)
-      .subscribe((data) =>
-      {
-        let tracks:Track[] = [];
-        for(let y =0;y < data['tracks'].length;++y)
-          tracks.push(new Track(data['tracks'][y]['id'], data['tracks'][y]['number'], data['tracks'][y]['title'], data['tracks'][y]['lyrics'], data['tracks'][y]['video']));
-        let album:Album = new Album(data['id'], data['title'], data['artist'], data['description'], data['year'], data['image'], tracks);
-        callback(album);
+  public getAlbumsOfArtist(callback: (albums: Album[])=> void, artistName: String): void {
+    this.http.get<Album[]>(this.host + "/albums/" + artistName).
+    subscribe((albums: Album[]) =>{
+      callback(albums);
     });
   }
 
-  public createAlbum(album:Album, callback:any)
-  {
-    // Call the Create Album API using a HTTP POST
-    this.http.post<Album>(this.hostname + "/albums", album)
-    .subscribe((data) =>
-    {
-      callback(data);
+  public createAlbum(album: Album, callback: ()=> void): void {
+    this.http.post<Album[]>(this.host + "/albums/", album).
+    subscribe((data) =>{
+      callback();
     });
   }
 
-  public updateAlbum(album:Album, callback:any)
-  {
-    // Call the Update Album API using a HTTP PUT
-    this.http.put<Album>(this.hostname + "/albums", album)
-    .subscribe((data) =>
-    {
-      callback(data);
+  public updateAlbum(album: Album, callback: ()=> void): void {
+    this.http.put<Album[]>(this.host + "/albums/", album).
+    subscribe((data) =>{
+      callback();
     });
   }
 
-  public deleteAlbum(id:number, artist:string, callback:any)
-  {
-    // Search for the Album in the list of Albums and delete from the list
-    this.http.delete(this.hostname + "/albums/" + artist + "/" + id)
-    .subscribe((data) =>
-    {
-      callback(data);
+  public deleteAlbum(id: number, callback: ()=> void): void {
+    this.http.delete(this.host + "/albums/" + id).
+    subscribe((data) =>{
+      callback();
     });
   }
+
+  public getAlbumById(id: number, callback: (albums: Album[])=>void){
+    this.http.get<Album[]>(this.host + "/albums?albumId=" + id).
+    subscribe((albums: Album[])=>{
+      callback(albums);
+    });
+  }
+
 }
+
