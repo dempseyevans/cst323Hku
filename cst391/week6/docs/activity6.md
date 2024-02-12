@@ -9,7 +9,7 @@
 ***
 
 #### Research Quesetions
-###### There were many new features on this application. When using data from the JSON file the callback function is used. Callback functions basically allow the programs to multitask. Such as the program continuing to run while the album list updates. React hooks were used as well. This allows the current state to be returned as a value.
+###### There were many new features on this application. When using data from the JSON file the callback function is used. Callback functions basically allow the programs to multitask. Such as the program continuing to run while the album list updates. These callbacks are used for event handlers in this program. React hooks were used as well. This allows the current state to be returned as a value. Axios is a newly introduced library that is used in this application. It is used to get data from the rest service.
 
 ***
 ***
@@ -19,6 +19,7 @@
 ***
 
 #### Research Quesetions
+###### This application had a higher focus on routes. Like the previous appication, callbacks and hooks are used. This allows the location state to be used. Private routes were a new concept which blocks users who are not logged into the application from accessing the private API's. Each page is given it's own js file then is used with the created private routes in the PrivateRoutes.js to apply the API in the APP.js file.
 
 ***
 ***
