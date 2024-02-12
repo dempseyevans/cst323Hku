@@ -15,7 +15,7 @@
 ***
 
 #### 'Mini APP #2'
-
+![app2](router.jpg, 'App 2')
 ***
 
 #### Research Quesetions
@@ -25,6 +25,7 @@
 ***
 
 #### Part 4
-
+![App4](4.jpg, 'Application 4')
 ***
 #### Research Questions
+####### This activity continued to build on the music app. A new component was made to manage the cards and search through the albums. The app.js file was modified to utilize the new components. The navbar from bootstrap was utilized again as well.
