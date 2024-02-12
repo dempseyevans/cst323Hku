@@ -9,7 +9,7 @@
 ***
 
 #### Research Quesetions
-!!!!!!!!!!!!!!!!!!!
+###### There were many new features on this application. When using data from the JSON file the callback function is used. Callback functions basically allow the programs to multitask. Such as the program continuing to run while the album list updates. React hooks were used as well. This allows the current state to be returned as a value.
 
 ***
 ***
