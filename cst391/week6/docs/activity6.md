@@ -16,6 +16,7 @@
 
 #### 'Mini APP #2'
 ![app2](router.jpg, 'App 2')
+###### Above is the outcome of running the application. I verified multipe times that the code was copied correctly and fixed any errors. After going through the process I was still unable to manage to get the screen to show any information in the localhost. I attempted to reach other URL's within the application as well.
 ***
 
 #### Research Quesetions
@@ -26,6 +27,7 @@
 
 #### Part 4
 ![App4](4.jpg, 'Application 4')
+###### I verified that the code was coppied correctly and there were no visual changes to the application. I was unable to find any errors in the application that would stop the visual aspect of the application from running correctly.
 ***
 #### Research Questions
 ####### This activity continued to build on the music app. A new component was made to manage the cards and search through the albums. The app.js file was modified to utilize the new components. The navbar from bootstrap was utilized again as well.
