@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Card from "./Card";
-import "./App.css";
+// Card from "./Card";
+//import "./App.css";
 // import albums from './albums.json';
-import SearchForm from "./SearchForm";
+//import SearchForm from "./SearchForm";
 import dataSource from "./dataSource";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import SearchAlbum from "./SearchAlbum";
 import NavBar from "./NavBar";
-import NewAlbum from "./NewAlbum";
+import EditAlbum from "./EditAlbum";
 import OneAlbum from "./OneAlbum";
 
 const App = (props) => {
@@ -33,16 +33,17 @@ const App = (props) => {
 
     setAlbumList(response.data);
   }
-  const updateSingleAlbum = (id, navigate) => {
+  const updateSingleAlbum = (id, navigate, uri) => {
     console.log('Update Single Album = ', id);
     console.log('Update Single Album = ', navigate);
     var indexNumber = 0;
     for(var i = 0; i < albumList.length; i++){
-      if(albumList[i].id === id) indexNumber = i;
+      if(albumList[i].albumId === id) indexNumber = i;
     }
     setCurrentlySelectedAlbumId(indexNumber);
-    console.log('update path', '/show/' + indexNumber);
-    navigate('/show/' + indexNumber);
+    let path = uri + indexNumber;
+    console.log('path', path);
+    navigate(path);
   };
 
   console.log('albumList', albumList);
@@ -52,7 +53,10 @@ const App = (props) => {
       return false;
   });
 
-  // console.log('renderedList', renderedList);
+  const onEditAlbum = (navigate) => {
+    loadAlbums();
+    navigate("/");
+  };
 
   return (
     <BrowserRouter>
@@ -66,7 +70,8 @@ const App = (props) => {
         />
       }
       />
-      <Route exact path='/new' element={<NewAlbum />}/>
+      <Route exact path='/new' element={<EditAlbum onEditAlbum={onEditAlbum}/>}/>
+      <Route exact path='/edit/:albumId' element={<EditAlbum onEditAlbum={onEditAlbum} album={albumList[currentlySelectedAlbumId]} />} />
       <Route exact path='/show/:albumId' element={<OneAlbum album={albumList[currentlySelectedAlbumId]} />} />
     </Routes>
     </BrowserRouter>

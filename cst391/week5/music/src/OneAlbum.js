@@ -2,6 +2,7 @@ import React from "react";
 const OneAlbum = (props) => {
     return (
         <div className='container'>
+            <h1>Is this working</h1>
             <h2>Album Details for {props.album.title}</h2>
             <div className='row'>
                 <div className='col col-sm-3'>
@@ -17,6 +18,14 @@ const OneAlbum = (props) => {
                                 Edit
                             </a>
                         </div>
+                    </div>
+                </div>
+                <div className='col col-sm-9'>
+                    <div className='card'>
+                        <p>Show the lyrics of select track here</p>
+                    </div>
+                    <div className='card'>
+                        <p>Show the YouTube video of select track here</p>
                     </div>
                 </div>
             </div>
